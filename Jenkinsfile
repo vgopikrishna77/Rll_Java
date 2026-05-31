@@ -1,22 +1,35 @@
 pipeline {
     agent any
 
+    parameters {
+        choice(name: 'STAGE', choices: ['Build', 'Test', 'Deploy'])
+    }
+
     stages {
         stage('Build') {
+            when {
+                expression { params.STAGE == 'Build' }
+            }
             steps {
-                echo 'project started'
+                echo 'Building...'
             }
         }
 
         stage('Test') {
+            when {
+                expression { params.STAGE == 'Test' }
+            }
             steps {
-                echo 'running tests'
+                echo 'Testing...'
             }
         }
 
         stage('Deploy') {
+            when {
+                expression { params.STAGE == 'Deploy' }
+            }
             steps {
-                echo 'deploying application'
+                echo 'Deploying...'
             }
         }
     }
