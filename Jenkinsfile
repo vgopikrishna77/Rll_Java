@@ -1,10 +1,11 @@
-pipeline{
-agent any
-stages{
-stage("build"){
-step{
-echo "project stareted"
-}
-}
-}
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'project started'
+            }
+        }
+    }
 }
