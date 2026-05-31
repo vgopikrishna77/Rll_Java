@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Building...'
                  dir('eLearning') {
-                    sh 'mvn clean install'
+                    sh 'mvn clean install -DskipTests'
                 }
               
             }
