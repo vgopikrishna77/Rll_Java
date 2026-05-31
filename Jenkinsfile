@@ -40,7 +40,7 @@ pipeline {
                 echo 'Deploying...'
                 dir('eLearning') {
             sh 'ls -l target/*.war'
-                    archiveArtifacts artifacts: 'eLearning/target/*.war'
+                    archiveArtifacts artifacts: 'target/*.war'
         }
             }
         }
