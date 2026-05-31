@@ -38,6 +38,9 @@ pipeline {
             }
             steps {
                 echo 'Deploying...'
+                dir('eLearning') {
+            sh 'ls -l target/*.war'
+        }
             }
         }
         stage('Check Artifact') {
