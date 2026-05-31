@@ -5,7 +5,7 @@ pipeline {
         choice(name: 'STAGE', choices: ['Build', 'Test', 'Deploy'])
     }
     tools {
-        maven 'Maven-3.9.16'
+        maven 'maven-3.9.16'
     }
 
 
